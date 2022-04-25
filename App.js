@@ -5,7 +5,7 @@ function App(){
   return(
     <View>
       <Text>
-        Merhaba dad selammm
+        Merhaba Dunya
       </Text>
     </View>
   );
