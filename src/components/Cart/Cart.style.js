@@ -23,14 +23,16 @@ export default StyleSheet.create({
         marginTop:3
     },
     button_container:{
-        backgroundColor:'blue',
+        backgroundColor:'#00c2ff',
         padding:10,
         alignItems:'center',
+        borderBottomRightRadius:10,
+        borderBottomLeftRadius:10,
         
     },
     button_title:{
         fontWeight:'bold',
-        color:'red',
+        color:'white',
         fontSize:18
     }
 })
