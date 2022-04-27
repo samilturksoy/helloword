@@ -1,22 +1,46 @@
-import React from 'react'; //jsx yapısını kullanacağım için ekledim.
-import {SafeAreaView,StyleSheet} from 'react-native';// ben cihazda birşeyler göstereceğim. View dive denk gelir TExt p veya span
-import Cart from './components/Cart';
+// import React from 'react';
+// import {SafeAreaView,Text,Button} from 'react-native';
 
-const App =()=>{
+// // State bir haberim neden. Aşşağıdaki yazılan kod ekranımda güncellenmiyor.
+// // Acaba counter mı artmıyor bunu test etmek için console counter değerini kontrol eden bir buton daha
+// // oluşturdum ve arttığını gördüm.
+// function App(){
+
+//   let counter=0;
+
+//   function updateCounter(){
+//     counter++;
+//   }
+//   return(
+//     <SafeAreaView>
+//       <Text style={{fontSize:40}}>Counter : {counter}</Text>
+//       <Button title='Update counter' onPress={updateCounter} />
+//       <Button title='Check Counter' onPress={() => console.log(counter)} />
+//     </SafeAreaView>
+//   );
+// }
+// export default App;
+
+import React, {useState} from 'react';
+import {SafeAreaView,Text,Button} from 'react-native';
+
+function App() {
+
+  const [getCounter,setCounter] = useState(0);
+
+  function updateCounter(){
+    setCounter(getCounter + 1);
+  }
+  function sil(){
+    setCounter(getCounter - 1);
+  }
   return(
-    <SafeAreaView style={style.container}>
-      <Cart title="şamil türksoy" text="rn çok güzel" />
-      <Cart title="şamil " text="rn  güzel" />
-      <Cart title=" türksoy" text="rn çok " />
+    <SafeAreaView>
+      <Text style={{fontSize:40}}>Counter: {getCounter}</Text>
+      <Button title='Update Counter' onPress={updateCounter}></Button>
+      <Button title='sil Counter' onPress={sil}></Button>
     </SafeAreaView>
   );
 }
-
-  const style =StyleSheet.create({
-    container:{
-      flex:1,
-      backgroundColor:'e0e0e0e'
-    }
-  })
 
 export default App;
